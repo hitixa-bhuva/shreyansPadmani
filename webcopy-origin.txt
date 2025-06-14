@@ -1,0 +1,520 @@
+Uri: https://ashik-html.vercel.app/
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\index.htm
+Content Type: text/html
+
+Uri: https://ashik-html.vercel.app/blog-detailsnew.html
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\blog-detailsnew.html
+Content Type: text/html
+
+Uri: https://ashik-html.vercel.app/blog.html
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\blog.html
+Content Type: text/html
+
+Uri: https://ashik-html.vercel.app/contact-new.html
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\contact-new.html
+Content Type: text/html
+
+Uri: https://ashik-html.vercel.app/css/fonts/ashik-icon.css
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\css\fonts\ashik-icon.css
+Content Type: text/css
+
+Uri: https://ashik-html.vercel.app/css/fonts/font-awesome.css
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\css\fonts\font-awesome.css
+Content Type: text/css
+
+Uri: https://ashik-html.vercel.app/css/lib/bootstrap.min.css
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\css\lib\bootstrap.min.css
+Content Type: text/css
+
+Uri: https://ashik-html.vercel.app/css/lib/magnific-popup.css
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\css\lib\magnific-popup.css
+Content Type: text/css
+
+Uri: https://ashik-html.vercel.app/css/lib/swiper-bundle.min.css
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\css\lib\swiper-bundle.min.css
+Content Type: text/css
+
+Uri: https://ashik-html.vercel.app/css/main.css
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\css\main.css
+Content Type: text/css
+
+Uri: https://ashik-html.vercel.app/fonts/ashik-icon.eot?l9ylbg
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\fonts\ashik-icon.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: https://ashik-html.vercel.app/fonts/ashik-icon.svg?l9ylbg
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\fonts\ashik-icon.svg
+Content Type: image/svg+xml
+
+Uri: https://ashik-html.vercel.app/fonts/ashik-icon.ttf?l9ylbg
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\fonts\ashik-icon.ttf
+Content Type: font/ttf
+
+Uri: https://ashik-html.vercel.app/fonts/ashik-icon.woff?l9ylbg
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\fonts\ashik-icon.woff
+Content Type: font/woff
+
+Uri: https://ashik-html.vercel.app/fonts/fa-brands-400.ttf
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\fonts\fa-brands-400.ttf
+Content Type: font/ttf
+
+Uri: https://ashik-html.vercel.app/fonts/fa-brands-400.woff2
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\fonts\fa-brands-400.woff2
+Content Type: font/woff2
+
+Uri: https://ashik-html.vercel.app/fonts/fa-light-300.ttf
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\fonts\fa-light-300.ttf
+Content Type: font/ttf
+
+Uri: https://ashik-html.vercel.app/fonts/fa-light-300.woff2
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\fonts\fa-light-300.woff2
+Content Type: font/woff2
+
+Uri: https://ashik-html.vercel.app/fonts/fa-regular-400.ttf
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\fonts\fa-regular-400.ttf
+Content Type: font/ttf
+
+Uri: https://ashik-html.vercel.app/fonts/fa-regular-400.woff2
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\fonts\fa-regular-400.woff2
+Content Type: font/woff2
+
+Uri: https://ashik-html.vercel.app/fonts/fa-solid-900.ttf
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\fonts\fa-solid-900.ttf
+Content Type: font/ttf
+
+Uri: https://ashik-html.vercel.app/fonts/fa-solid-900.woff2
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\fonts\fa-solid-900.woff2
+Content Type: font/woff2
+
+Uri: https://ashik-html.vercel.app/fonts/fa-thin-100.ttf
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\fonts\fa-thin-100.ttf
+Content Type: font/ttf
+
+Uri: https://ashik-html.vercel.app/fonts/fa-thin-100.woff2
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\fonts\fa-thin-100.woff2
+Content Type: font/woff2
+
+Uri: https://ashik-html.vercel.app/fonts/fa-v4compatibility.ttf
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\fonts\fa-v4compatibility.ttf
+Content Type: font/ttf
+
+Uri: https://ashik-html.vercel.app/fonts/fa-v4compatibility.woff2
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\fonts\fa-v4compatibility.woff2
+Content Type: font/woff2
+
+Uri: https://ashik-html.vercel.app/img/about-1.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\about-1.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/about-2.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\about-2.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/about-4.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\about-4.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/about-img.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\about-img.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/ad-banner.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\ad-banner.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/author-banner-2.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\author-banner-2.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/author-banner-dark.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\author-banner-dark.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/author-banner.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\author-banner.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/author-mini-1.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\author-mini-1.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/author-mini-2.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\author-mini-2.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/author-mini-3.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\author-mini-3.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/banner-1-shap.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\banner-1-shap.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/banner-1.jpg
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\banner-1.jpg
+Content Type: image/jpeg
+
+Uri: https://ashik-html.vercel.app/img/bg-shap-1-dark.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\bg-shap-1-dark.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/bg-shap-1.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\bg-shap-1.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/blog-1.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\blog-1.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/blog-2.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\blog-2.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/blog-3.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\blog-3.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/blog-details.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\blog-details.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/brand/brand-1.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\brand\brand-1.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/brand/brand-10.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\brand\brand-10.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/brand/brand-11.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\brand\brand-11.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/brand/brand-12.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\brand\brand-12.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/brand/brand-13.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\brand\brand-13.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/brand/brand-14.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\brand\brand-14.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/brand/brand-15.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\brand\brand-15.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/brand/brand-16.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\brand\brand-16.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/brand/brand-17.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\brand\brand-17.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/brand/brand-2.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\brand\brand-2.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/brand/brand-3.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\brand\brand-3.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/brand/brand-4.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\brand\brand-4.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/brand/brand-5.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\brand\brand-5.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/brand/brand-6.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\brand\brand-6.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/brand/brand-7.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\brand\brand-7.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/brand/brand-8.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\brand\brand-8.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/brand/brand-9.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\brand\brand-9.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/brand/dark/brand-1.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\brand\dark\brand-1.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/brand/dark/brand-10.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\brand\dark\brand-10.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/brand/dark/brand-11.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\brand\dark\brand-11.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/brand/dark/brand-12.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\brand\dark\brand-12.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/brand/dark/brand-2.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\brand\dark\brand-2.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/brand/dark/brand-3.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\brand\dark\brand-3.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/brand/dark/brand-4.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\brand\dark\brand-4.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/brand/dark/brand-5.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\brand\dark\brand-5.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/brand/dark/brand-6.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\brand\dark\brand-6.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/brand/dark/brand-7.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\brand\dark\brand-7.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/brand/dark/brand-8.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\brand\dark\brand-8.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/brand/dark/brand-9.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\brand\dark\brand-9.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/breadcrumbs.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\breadcrumbs.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/comment-1.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\comment-1.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/comment-2.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\comment-2.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/dot-shap.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\dot-shap.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/fav-2.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\fav-2.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/fav.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\fav.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/footer-logo-2.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\footer-logo-2.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/footer-logo.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\footer-logo.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/logo-2.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\logo-2.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/logo-dark.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\logo-dark.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/logo.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\logo.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/newsletters.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\newsletters.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/portfolio-1.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\portfolio-1.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/portfolio-2.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\portfolio-2.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/portfolio-3.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\portfolio-3.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/portfolio/photography/1.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\portfolio\photography\1.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/portfolio/photography/2.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\portfolio\photography\2.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/portfolio/photography/3.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\portfolio\photography\3.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/portfolio/photography/4.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\portfolio\photography\4.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/portfolio/photography/5.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\portfolio\photography\5.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/portfolio/ui/1.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\portfolio\ui\1.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/portfolio/ui/2.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\portfolio\ui\2.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/portfolio/ui/3.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\portfolio\ui\3.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/portfolio/ui/4.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\portfolio\ui\4.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/portfolio/ui/5.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\portfolio\ui\5.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/portfolio/ui/6.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\portfolio\ui\6.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/portfolio/video-editing/1.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\portfolio\video-editing\1.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/portfolio/video-editing/2.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\portfolio\video-editing\2.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/portfolio/video-editing/3.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\portfolio\video-editing\3.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/portfolio/video-editing/4.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\portfolio\video-editing\4.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/portfolio/video-editing/5.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\portfolio\video-editing\5.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/portfolio/video-editing/6.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\portfolio\video-editing\6.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/project-1.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\project-1.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/project-2.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\project-2.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/project-3.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\project-3.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/testimonial-author-2.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\testimonial-author-2.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/testimonial-author.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\testimonial-author.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/img/watch-highlight.png
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\watch-highlight.png
+Content Type: image/png
+
+Uri: https://ashik-html.vercel.app/index-2-dark.html
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\index-2-dark.html
+Content Type: text/html
+
+Uri: https://ashik-html.vercel.app/index-2.html
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\index-2.html
+Content Type: text/html
+
+Uri: https://ashik-html.vercel.app/index-dark.html
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\index-dark.html
+Content Type: text/html
+
+Uri: https://ashik-html.vercel.app/index.html
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\index.html
+Content Type: text/html
+
+Uri: https://ashik-html.vercel.app/js/animation.js
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\js\animation.js
+Content Type: application/javascript
+
+Uri: https://ashik-html.vercel.app/js/gsap/gsap.min.js
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\js\gsap\gsap.min.js
+Content Type: application/javascript
+
+Uri: https://ashik-html.vercel.app/js/gsap/ScrollSmoother.min.js
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\js\gsap\ScrollSmoother.min.js
+Content Type: application/javascript
+
+Uri: https://ashik-html.vercel.app/js/gsap/ScrollTrigger.min.js
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\js\gsap\ScrollTrigger.min.js
+Content Type: application/javascript
+
+Uri: https://ashik-html.vercel.app/js/gsap/SplitText.min.js
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\js\gsap\SplitText.min.js
+Content Type: application/javascript
+
+Uri: https://ashik-html.vercel.app/js/lib/bootstrap.bundle.min.js
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\js\lib\bootstrap.bundle.min.js
+Content Type: application/javascript
+
+Uri: https://ashik-html.vercel.app/js/lib/imagesloaded.js
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\js\lib\imagesloaded.js
+Content Type: application/javascript
+
+Uri: https://ashik-html.vercel.app/js/lib/isotope.js
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\js\lib\isotope.js
+Content Type: application/javascript
+
+Uri: https://ashik-html.vercel.app/js/lib/jquery.counterup.min.js
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\js\lib\jquery.counterup.min.js
+Content Type: application/javascript
+
+Uri: https://ashik-html.vercel.app/js/lib/jquery.magnific-popup.min.js
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\js\lib\jquery.magnific-popup.min.js
+Content Type: application/javascript
+
+Uri: https://ashik-html.vercel.app/js/lib/jquery.min.js
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\js\lib\jquery.min.js
+Content Type: application/javascript
+
+Uri: https://ashik-html.vercel.app/js/lib/swiper-bundle.min.js
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\js\lib\swiper-bundle.min.js
+Content Type: application/javascript
+
+Uri: https://ashik-html.vercel.app/js/lib/waypoints.min.js
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\js\lib\waypoints.min.js
+Content Type: application/javascript
+
+Uri: https://ashik-html.vercel.app/js/main.js
+File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\js\main.js
+Content Type: application/javascript
+
