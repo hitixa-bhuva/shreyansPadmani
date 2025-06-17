@@ -1,92 +1,109 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
-  <head>
+<html class="no-js" lang="en">
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/lib/bootstrap.min.css">
-    <link rel="stylesheet" href="css/lib/magnific-popup.css">
-    <link rel="stylesheet" href="css/lib/swiper-bundle.min.css">
-    <link rel="stylesheet" href="css/fonts/font-awesome.css">
-    <link rel="stylesheet" href="css/fonts/ashik-icon.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="shortcut icon" href="img/fav.png" type="image/x-icon"> 
-    <title>Ashik Personal Portfolio Template</title>
+    <link rel="stylesheet" href="./css/lib/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/lib/magnific-popup.css">
+    <link rel="stylesheet" href="./css/lib/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./css/fonts/font-awesome.css">
+    <link rel="stylesheet" href="./css/fonts/ashik-icon.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="shortcut icon" href="././assetss/img/logo/favicon-SHREYANS PADMANI.png" type="image/x-icon">
+    <title>Shreyansh Personal Portfolio Template</title>
   </head>
-  <body class="dark-bg">
+
+<body class="light-mode" cz-shortcut-listen="true" style="height: 3583px; touch-action: pan-x; overscroll-behavior: none; scroll-behavior: auto;">
     <!--================================
         PRELOADER START
     =================================-->
-    <div class="preloader">
-      <svg viewbox="0 0 1000 1000" preserveaspectratio="none">
-        <path id="svg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
-      </svg>
-      <h5 class="preloader-text">Ashik</h5>
-    </div>
+    
     <!--================================
         PRELOADER END
     =================================-->
-    <header class="main-header fixed-header">
+    <div class="preloader" style="translate: none; rotate: none; scale: none; transform: translate(0px, -1500px); display: none; z-index: -1;">
+      <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
+        <path id="svg" d="M0 2S175 1 500 1s500 1 500 1V0H0Z"></path>
+      </svg>
+      <h5 class="preloader-text" style="translate: none; rotate: none; scale: none; opacity: 0; transform: translate(-50%, -50%) translate(-0.113px, -100px);">Ashik</h5>
+    </div>
+    <header class="main-header header-2 fixed-header">
       <div class="container">
-        <div class="d-flex justify-content-between align-items-center">
-          <div class="logo">
-            <a href="index.html"><img src="img/logo-dark.png" alt=""></a>
-          </div>
+        <div class="header-2-content">
+          <div class="row align-items-center">
+            <div class="col-xxl-3 col-lg-2 col-6">
+              <div class="logo">
+                <a href="./index.html"><img src="./assetss/img/logo/SHREYANS-PADMANIWhite.png" alt=""></a>
+              </div>
+            </div>
 
-          <div class="d-none d-lg-block main-menu">
-            <nav class="navbar-nav m-auto" id="navbarNav">
-              <ul>
-                <li class="dropdown-nav">
-                  <a href="#">Home</a>
-                  <ul class="submenu">
-                    <li><a href="index.html">Home 1</a></li>
-                    <li><a href="index-dark.html">Home 1 Dark</a></li>
-                    <li><a href="index-2.html">Home 2</a></li>
-                    <li><a href="index-2-dark.html">Home 2 Dark</a></li>
-                  </ul>
+            <div class="col-xxl-6 col-lg-8 d-none d-lg-block main-menu main-menu-2">
+              <nav class="navbar-nav m-auto" id="navbarNav">
+                <ul>
+                <li>
+                 <a href="index.html">Home</a>
                 </li>
                 <li>
-                  <a href="#about">About</a>
+                  <a href="myblog.html">Blog</a>
                 </li>
                 <li>
-                  <a href="#services">Services</a>
-                </li>
-                <li>
-                  <a href="#projects">Projects</a>
-                </li>
-                <li class="dropdown-nav">
-                  <a href="#">Blog</a>
-                  <ul class="submenu">
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="blog-detailsnew.html">Blog Details</a></li>
-                  </ul>
-                </li>
-                <li>
-                  <a href="#contact">Contact</a>
+                  <a href="contact-new.html">Contact</a>
                 </li>
               </ul>
-            </nav>
-          </div>
-          <div>
-            <a href="contact-new.html" class="theme-btn d-none d-lg-block btn_moveing_hover">Contact us</a>
-            <a href="#" class="toggle-sidebar d-flex d-lg-none ms-0 theme-1-bg">
-              <div class="toggle">
-                <span></span>
-                <span></span>
-              </div>
-            </a>
+              </nav>
+            </div>
+            <div class="col-xxl-3 col-lg-2 flex-end col-6">
+              <a href="#" class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></a>
+              <a href="#" class="toggle-sidebar">
+                <div class="toggle">
+                  <span></span>
+                  <span></span>
+                </div>
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </header>
-    <div id="scrollsmoother-container">
+     <div class="portfolio2_titles text-dark">Selena Gomez</div>
+    <!-- Search Popup -->
+    <div class="search-popup">
+      <div class="search-popup-overlay"></div>
+      <div class="search-popup-content">
+        <a href="#" class="close-search">
+          <i class="fa-regular fa-times"></i>
+        </a>
+        <div class="search-popup-form-container">
+          <form>
+            <input type="text" placeholder="Search Here">
+            <button><i class="fa-regular fa-magnifying-glass"></i></button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- Sidebar -->
+    <div class="mobile-menu mobile-menu-2">
+      <div class="menu-backdrop"></div>
+      <div class="main-menu-mobile">
+        <div class="d-flex align-items-center justify-content-between">
+          <div class="nav-logo">
+            <a href="index-2.html"><img src="./assetss/img/logo/SHREYANS-PADMANIWhite.png" alt="" title=""></a>
+          </div>
+          <div class="close-btn"><span class="far fa-times fa-fw"></span></div>
+        </div>
+        <div id="mobile-nav"></div>
+      </div>
+    </div>
+    <div class="ScrollSmoother-wrapper" style="inset: 0px; width: 100%; height: 100%; position: fixed; overflow: hidden;"><div id="scrollsmoother-container" style="translate: none; rotate: none; scale: none; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); box-sizing: border-box; width: 100%; overflow: visible;">
       <!-- breadcrumbs -->
       <section class="breadcrumbs">
-        <div class="container">
-          <div class="tf__breadcrumbs_text" data-animation="move" data-animation-offset="40" data-animation-delay="1.2">
-            <h1>Contact us</h1>
+        <div class="container" style="perspective: 400px;">
+          <div class="tf__breadcrumbs_text" data-animation="move" data-animation-offset="40" data-animation-delay="1.2" style="translate: none; rotate: none; scale: none; transform-origin: 648px 68.5px; opacity: 1; transform: translate3d(0px, 0px, 0px);">
+            <h1 class="text-white">Contact Us</h1>
             <ul>
-              <li><a href="#">Home</a></li>
-              <li><i class="fa-light fa-angle-right"></i></li>
+              <li><a href="#" class="text-white">Home</a></li>
+              <li><i class="fa-light fa-angle-right text-white"></i></li>
               <li><a href="#" class="color-theme-1">Contact</a></li>
             </ul>
           </div>
@@ -170,75 +187,51 @@
         </div>
       </section>
       <!-- Footer -->
-      <footer class="footer-2 pt-80 mt-120 default-footer">
+
+      <!-- Footer -->
+      <footer class="footer mt-120 gray-bg pt-75 pb-30 position-relative z-2">
         <div class="container">
-          <div class="row gap-md-30">
-            <div class="col-lg-3 col-md-4">
-              <div class="footer-logo mb-25">
-                <img src="img/logo-dark.png" alt="">
+          <div class="row gap-lg-30">
+            <div class="col-lg-5">
+              <h2 class="footer-title">
+                <i class="ashik-icon-star"></i>
+                <span data-text-animation="slide" data-split="words">
+                  <span>Let’s WORK</span> Together!
+                </span>
+              </h2>
+              <div class="footer-email" data-animation="fade" data-animation-direction="left" data-animation-offset="40">
+                <i class="fa-sharp fa-solid fa-paper-plane text-white"></i>
+                <h3 class="footer-email-text">
+                  <a href="#">abc.go@yahoo.mail</a>
+                </h3>
               </div>
-              <p>
-                Lorem ipsum dolor sit amet, consect etuer adipiscing elit, sed
-                diam nonu mmy nibh euis
-              </p>
-              <div class="social mt-30 mb-60">
-                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
-              </div>
-              <div class="footer-2-contact">
-                <i class="fa-solid fa-phone"></i>
-                <div class="footer-2-contact-content">
-                  <h4>Phone Number</h4>
-                  <p>012 345 678 9101</p>
-                </div>
-              </div>
-              <div class="footer-2-contact">
-                <i class="fa-solid fa-envelope"></i>
-                <div class="footer-2-contact-content">
-                  <h4>Email</h4>
-                  <p>abcd@gmail.com</p>
-                </div>
+              <div class="social mt-40">
+                <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
               </div>
             </div>
-            <div class="col-lg-6 col-md-8 offset-lg-3">
-              <form class="footer-form">
-                <h2>Send Message</h2>
-                <div class="row">
-                  <div class="col-md-6">
-                    <input type="text" placeholder="First Name">
-                  </div>
-                  <div class="col-md-6">
-                    <input type="text" placeholder="Last Name">
-                  </div>
-                  <div class="col-md-6">
-                    <input type="email" placeholder="E-mail Address">
-                  </div>
-                  <div class="col-md-6">
-                    <input type="text" placeholder="Phone Number">
-                  </div>
-                  <div class="col-md-12">
-                    <textarea placeholder="Write Message"></textarea>
-                  </div>
-                  <div class="col-md-12">
-                    <button class="theme-btn-with-bg">Send Message</button>
-                  </div>
-                </div>
-              </form>
+            <div class="col-lg-4 offset-lg-2">
+              <a href="#"><img src="./assetss/img/logo/SHREYANS-PADMANI.png" alt=""></a>
+              <p class="mt-35">
+                Senior Software Engineer crafting high-performance solutions with C#, .NET & Angular. I turn complex challenges into clean, scalable code — with speed, security, and precision.
+              </p>
+              <div class="footer-menus mt-65">
+               <a href="index.html">Home</a>
+                 <a href="myblog.html">Blog</a>
+                <a href="#">Contact Us</a>
+              </div>
             </div>
           </div>
-          <div class="mt-80 copyright">
-            <div class="row gap-lg-10">
-              <div class="col-lg-6">
-                <p>© codeefly 2024 | All Rights Reserved</p>
-              </div>
-              <div class="col-lg-6 flex-lg-end">
-                <div class="copyright-menus">
-                  <a href="#">Trams & Condition</a>
-                  <a href="#">Privacy Policy</a>
-                  <a href="#">Contact Us</a>
-                </div>
+          <div class="row mt-80 gap-lg-10">
+            <div class="col-lg-6">
+              <p>© codeefly 2025 | All Rights Reserved</p>
+            </div>
+            <div class="col-lg-6 flex-lg-end">
+              <div class="copyright-menus">
+                <a href="#">Trams & Condition</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Contact Us</a>
               </div>
             </div>
           </div>
@@ -250,7 +243,7 @@
         SCROLL BUTTON START
     ===============================-->
     <div class="tf__scroll_btn">
-      <i class="fa-regular fa-arrow-up-long"></i>
+      <i class="fa-regular fa-arrow-up-long text-white"></i>
     </div>
     <!--==============================
         SCROLL BUTTON END
