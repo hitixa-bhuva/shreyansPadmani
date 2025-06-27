@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Shreyansh Padmani - Senior Software Engineer</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0f172a;
+            --secondary-color: #475569;
+            --accent-color: #06b6d4;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --bg-light: #f8fafc;
+            --border-light: #e2e8f0;
+            --white: #ffffff;
+            --hover-bg: #f1f5f9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+
+        .navbar {
+            background: var(--white);
+            border-bottom: 1px solid var(--border-light);
+            padding: 1rem 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-color) !important;
+        }
+
+        .main-header {
+            background: var(--white);
+            padding: 3rem 0;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.025em;
+        }
+
+        .page-description {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+        }
+
+        .blog-section {
+            padding: 4rem 0;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .blog-card {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border-light);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .blog-card:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .blog-image-container {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .blog-card:hover .blog-image {
+            transform: scale(1.05);
+        }
+
+        .blog-category-badge {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            background: var(--accent-color);
+            color: var(--white);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .blog-content {
+            padding: 2rem;
+        }
+
+        .blog-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .blog-title a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .blog-title a:hover {
+            color: var(--accent-color);
+        }
+
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .meta-icon {
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+
+        .blog-excerpt {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .blog-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .btn-read-more {
+            background: var(--primary-color);
+            color: var(--white);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.2s ease;
+            font-size: 0.875rem;
+        }
+
+        .btn-read-more:hover {
+            background: var(--secondary-color);
+            color: var(--white);
+            transform: translateY(-1px);
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .btn-action {
+            width: 36px;
+            height: 36px;
+            border: 1px solid var(--border-light);
+            background: var(--white);
+            color: var(--text-secondary);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            font-size: 0.875rem;
+        }
+
+        .btn-action:hover {
+            background: var(--hover-bg);
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        .btn-action.delete:hover {
+            background: #fef2f2;
+            border-color: #ef4444;
+            color: #ef4444;
+        }
+
+        .pagination-container {
+            margin-top: 4rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .pagination {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .pagination .page-item {
+            list-style: none;
+        }
+
+        .pagination .page-link {
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border-light);
+            background: var(--white);
+            color: var(--text-secondary);
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            font-weight: 500;
+        }
+
+        .pagination .page-link:hover {
+            background: var(--primary-color);
+            color: var(--white);
+            border-color: var(--primary-color);
+        }
+
+        .pagination .page-item.active .page-link {
+            background: var(--primary-color);
+            color: var(--white);
+            border-color: var(--primary-color);
+        }
+
+        .pagination .page-item.disabled .page-link {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .pagination .page-item.disabled .page-link:hover {
+            background: var(--white);
+            color: var(--text-secondary);
+            border-color: var(--border-light);
+        }
+
+        .stats-bar {
+            background: var(--white);
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-light);
+            margin-bottom: 2rem;
+        }
+
+        .stats-text {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2rem;
+            }
+            
+            .blog-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .blog-content {
+                padding: 1.5rem;
+            }
+            
+            .blog-footer {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: stretch;
+            }
+            
+            .btn-read-more {
+                justify-content: center;
+            }
+            
+            .action-buttons {
+                justify-content: center;
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="#">Shreyansh Padmani</a>
+        </div>
+    </nav>
+
+    <!-- Main Header -->
+    <div class="main-header">
+        <div class="container">
+            <h1 class="page-title">Technical Blog</h1>
+            <p class="page-description">
+                Exploring modern software engineering practices, performance optimization, and full-stack development insights.
+            </p>
+        </div>
+    </div>
+
+    <!-- Stats Bar -->
+    <div class="stats-bar">
+        <div class="container">
+            <div class="stats-text">
+                Showing 6 of 24 articles
+            </div>
+        </div>
+    </div>
+
+    <!-- Blog Section -->
+    <div class="blog-section">
+        <div class="container">
+            <div class="blog-grid">
+                <!-- Blog Card 1 -->
+                <article class="blog-card fade-in">
+                    <div class="blog-image-container">
+                        <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Modern C# Development" class="blog-image">
+                        <div class="blog-category-badge">Performance</div>
+                    </div>
+                    <div class="blog-content">
+                        <h2 class="blog-title">
+                            <a href="#">Mastering Async/Await Patterns in Modern C#</a>
+                        </h2>
+                        <div class="blog-meta">
+                            <div class="meta-item">
+                                <i class="fa fa-user meta-icon"></i>
+                                <span>Shreyansh Padmani</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fa fa-calendar meta-icon"></i>
+                                <span>June 20, 2025</span>
+                            </div>
+                        </div>
+                        <p class="blog-excerpt">
+                            Deep dive into advanced async/await patterns, deadlock prevention, and performance optimization techniques for high-throughput C# applications.
+                        </p>
+                        <div class="blog-footer">
+                            <a href="#" class="btn-read-more">
+                                <i class="fa fa-arrow-right"></i>
+                                Read Article
+                            </a>
+                            <div class="action-buttons">
+                                <button class="btn-action" data-bs-toggle="tooltip" title="Edit Post">
+                                    <i class="fa fa-edit"></i>
+                                </button>
+                                <button class="btn-action delete" data-bs-toggle="tooltip" title="Delete Post">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Card 2 -->
+                <article class="blog-card fade-in">
+                    <div class="blog-image-container">
+                        <img src="https://images.unsplash.com/photo-1627398242454-45a1ff2b52c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1474&q=80" alt="Angular Architecture" class="blog-image">
+                        <div class="blog-category-badge">Angular</div>
+                    </div>
+                    <div class="blog-content">
+                        <h2 class="blog-title">
+                            <a href="#">Building Scalable Angular Applications with Nx</a>
+                        </h2>
+                        <div class="blog-meta">
+                            <div class="meta-item">
+                                <i class="fa fa-user meta-icon"></i>
+                                <span>Shreyansh Padmani</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fa fa-calendar meta-icon"></i>
+                                <span>June 18, 2025</span>
+                            </div>
+                        </div>
+                        <p class="blog-excerpt">
+                            Learn how to architect enterprise-grade Angular applications using Nx monorepo tools, micro-frontends, and advanced state management patterns.
+                        </p>
+                        <div class="blog-footer">
+                            <a href="#" class="btn-read-more">
+                                <i class="fa fa-arrow-right"></i>
+                                Read Article
+                            </a>
+                            <div class="action-buttons">
+                                <button class="btn-action" data-bs-toggle="tooltip" title="Edit Post">
+                                    <i class="fa fa-edit"></i>
+                                </button>
+                                <button class="btn-action delete" data-bs-toggle="tooltip" title="Delete Post">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Card 3 -->
+                <article class="blog-card fade-in">
+                    <div class="blog-image-container">
+                        <img src="https://images.unsplash.com/photo-1518773553398-650c184e0bb3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Cloud Architecture" class="blog-image">
+                        <div class="blog-category-badge">.NET</div>
+                    </div>
+                    <div class="blog-content">
+                        <h2 class="blog-title">
+                            <a href="#">Implementing Clean Architecture in .NET 8 Projects</a>
+                        </h2>
+                        <div class="blog-meta">
+                            <div class="meta-item">
+                                <i class="fa fa-user meta-icon"></i>
+                                <span>Shreyansh Padmani</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fa fa-calendar meta-icon"></i>
+                                <span>June 15, 2025</span>
+                            </div>
+                        </div>
+                        <p class="blog-excerpt">
+                            Complete guide to implementing Clean Architecture principles in .NET 8 applications with practical examples and best practices for maintainable code.
+                        </p>
+                        <div class="blog-footer">
+                            <a href="#" class="btn-read-more">
+                                <i class="fa fa-arrow-right"></i>
+                                Read Article
+                            </a>
+                            <div class="action-buttons">
+                                <button class="btn-action" data-bs-toggle="tooltip" title="Edit Post">
+                                    <i class="fa fa-edit"></i>
+                                </button>
+                                <button class="btn-action delete" data-bs-toggle="tooltip" title="Delete Post">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Card 4 -->
+                <article class="blog-card fade-in">
+                    <div class="blog-image-container">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Database Performance" class="blog-image">
+                        <div class="blog-category-badge">Database</div>
+                    </div>
+                    <div class="blog-content">
+                        <h2 class="blog-title">
+                            <a href="#">Advanced SQL Server Performance Optimization</a>
+                        </h2>
+                        <div class="blog-meta">
+                            <div class="meta-item">
+                                <i class="fa fa-user meta-icon"></i>
+                                <span>Shreyansh Padmani</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fa fa-calendar meta-icon"></i>
+                                <span>June 12, 2025</span>
+                            </div>
+                        </div>
+                        <p class="blog-excerpt">
+                            Master SQL Server performance tuning with indexing strategies, query optimization, and execution plan analysis for enterprise applications.
+                        </p>
+                        <div class="blog-footer">
+                            <a href="#" class="btn-read-more">
+                                <i class="fa fa-arrow-right"></i>
+                                Read Article
+                            </a>
+                            <div class="action-buttons">
+                                <button class="btn-action" data-bs-toggle="tooltip" title="Edit Post">
+                                    <i class="fa fa-edit"></i>
+                                </button>
+                                <button class="btn-action delete" data-bs-toggle="tooltip" title="Delete Post">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Card 5 -->
+                <article class="blog-card fade-in">
+                    <div class="blog-image-container">
+                        <img src="https://images.unsplash.com/photo-1563206767-5b18f218e8de?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="API Security" class="blog-image">
+                        <div class="blog-category-badge">Security</div>
+                    </div>
+                    <div class="blog-content">
+                        <h2 class="blog-title">
+                            <a href="#">Securing REST APIs with OAuth 2.0 and OpenID Connect</a>
+                        </h2>
+                        <div class="blog-meta">
+                            <div class="meta-item">
+                                <i class="fa fa-user meta-icon"></i>
+                                <span>Shreyansh Padmani</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fa fa-calendar meta-icon"></i>
+                                <span>June 8, 2025</span>
+                            </div>
+                        </div>
+                        <p class="blog-excerpt">
+                            Comprehensive guide to implementing robust API security with OAuth 2.0, OpenID Connect, and modern authentication patterns in .NET applications.
+                        </p>
+                        <div class="blog-footer">
+                            <a href="#" class="btn-read-more">
+                                <i class="fa fa-arrow-right"></i>
+                                Read Article
+                            </a>
+                            <div class="action-buttons">
+                                <button class="btn-action" data-bs-toggle="tooltip" title="Edit Post">
+                                    <i class="fa fa-edit"></i>
+                                </button>
+                                <button class="btn-action delete" data-bs-toggle="tooltip" title="Delete Post">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Card 6 -->
+                <article class="blog-card fade-in">
+                    <div class="blog-image-container">
+                        <img src="https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" alt="DevOps Pipeline" class="blog-image">
+                        <div class="blog-category-badge">DevOps</div>
+                    </div>
+                    <div class="blog-content">
+                        <h2 class="blog-title">
+                            <a href="#">Building CI/CD Pipelines with GitHub Actions</a>
+                        </h2>
+                        <div class="blog-meta">
+                            <div class="meta-item">
+                                <i class="fa fa-user meta-icon"></i>
+                                <span>Shreyansh Padmani</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fa fa-calendar meta-icon"></i>
+                                <span>June 5, 2025</span>
+                            </div>
+                        </div>
+                        <p class="blog-excerpt">
+                            Step-by-step guide to creating efficient CI/CD pipelines using GitHub Actions for .NET applications with automated testing and deployment.
+                        </p>
+                        <div class="blog-footer">
+                            <a href="#" class="btn-read-more">
+                                <i class="fa fa-arrow-right"></i>
+                                Read Article
+                            </a>
+                            <div class="action-buttons">
+                                <button class="btn-action" data-bs-toggle="tooltip" title="Edit Post">
+                                    <i class="fa fa-edit"></i>
+                                </button>
+                                <button class="btn-action delete" data-bs-toggle="tooltip" title="Delete Post">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination-container">
+                <nav aria-label="Blog pagination">
+                    <ul class="pagination">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
+                                <i class="fa fa-chevron-left"></i>
+                            </a>
+                        </li>
+                        <li class="page-item active" aria-current="page">
+                            <a class="page-link" href="#">1</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">2</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">3</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">4</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">
+                                <i class="fa fa-chevron-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Initialize tooltips
+        document.addEventListener('DOMContentLoaded', function() {
+            const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+
+            // Add staggered animation to cards
+            const cards = document.querySelectorAll('.blog-card');
+            cards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+            });
+        });
+
+        // Smooth scroll for pagination links
+        document.querySelectorAll('.page-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                // Add your pagination logic here
+                console.log('Page clicked:', this.textContent);
+            });
+        });
+    </script>
+</body>
+</html>

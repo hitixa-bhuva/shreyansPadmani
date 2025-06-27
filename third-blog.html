@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/lib/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/lib/magnific-popup.css">
+    <link rel="stylesheet" href="./css/lib/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./css/fonts/font-awesome.css">
+    <link rel="stylesheet" href="./css/fonts/ashik-icon.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="shortcut icon" href="././assetss/img/logo/favicon-SHREYANS PADMANI.png" type="image/x-icon">
+    <title>Shreyansh Personal Portfolio Template</title>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #64748b;
+            --accent-color: #f59e0b;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --border-color: #e2e8f0;
+            --hover-shadow: 0 10px 25px rgba(37, 99, 235, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .header-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #1d4ed8 100%);
+            color: white;
+            padding: 4rem 0 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="rgba(255,255,255,0.1)"><polygon points="0,0 1000,0 1000,100 0,20"/></svg>') no-repeat bottom;
+            background-size: cover;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .page-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .blog-container {
+            padding: 4rem 0;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--hover-shadow);
+        }
+
+        .blog-image {
+            height: 220px;
+            background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .blog-card:hover .blog-image img {
+            transform: scale(1.05);
+        }
+
+        .blog-category {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            border: 1px solid var(--primary-color);
+            background-color: #e2e8f0a1;
+            color: var(--primary-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .blog-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.8rem;
+            line-height: 1.4;
+        }
+
+        .blog-title a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .blog-title a:hover {
+            color: var(--primary-color);
+        }
+
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .blog-meta .author {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .blog-meta .date {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .blog-excerpt {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .blog-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+        }
+
+        .btn-read {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: 10px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-read:hover {
+            background: #1d4ed8;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .btn-action {
+            width: 35px;
+            height: 35px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            background: white;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-action:hover {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .btn-action.delete:hover {
+            background: #dc2626;
+            border-color: #dc2626;
+        }
+
+        .pagination-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-top: 3rem;
+        }
+
+        .pagination .page-link {
+            border: 1px solid var(--border-color);
+            color: var(--text-dark);
+            padding: 0.7rem 1rem;
+            margin: 0 0.1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .pagination .page-link:hover {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .pagination .page-item.active .page-link {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2rem;
+            }
+            
+            .blog-card {
+                margin-bottom: 2rem;
+            }
+            
+            .blog-actions {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: stretch;
+            }
+            
+            .btn-read {
+                text-align: center;
+                justify-content: center;
+            }
+        }
+
+        .tooltip {
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <div class="preloader" style="translate: none; rotate: none; scale: none; transform: translate(0px, -1500px); display: none; z-index: -1;">
+      <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
+        <path id="svg" d="M0 2S175 1 500 1s500 1 500 1V0H0Z"></path>
+      </svg>
+      <h5 class="preloader-text" style="translate: none; rotate: none; scale: none; opacity: 0; transform: translate(-50%, -50%) translate(-0.113px, -100px);">Ashik</h5>
+    </div>
+    <header class="main-header header-2 fixed-header">
+      <div class="container">
+        <div class="header-2-content">
+          <div class="row align-items-center">
+            <div class="col-xxl-3 col-lg-2 col-6">
+              <div class="logo">
+                <a href="./index.html"><img src="./assetss/img/logo/SHREYANS-PADMANIWhite.png" alt=""></a>
+              </div>
+            </div>
+
+            <div class="col-xxl-6 col-lg-8 d-none d-lg-block main-menu main-menu-2">
+              <nav class="navbar-nav m-auto" id="navbarNav">
+                <ul>
+                <li>
+                 <a href="index.html">Home</a>
+                </li>
+                <li>
+                   <a href="myblog.html">Blog</a>
+                </li>
+                <li>
+                  <a href="contact-new.html">Contact</a>
+                </li>
+              </ul>
+              </nav>
+            </div>
+            <div class="col-xxl-3 col-lg-2 flex-end col-6">
+              <a href="#" class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></a>
+              <a href="#" class="toggle-sidebar">
+                <div class="toggle">
+                  <span></span>
+                  <span></span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+     <div class="portfolio2_titles text-dark">Selena Gomez</div>
+    <!-- Search Popup -->
+    <div class="search-popup">
+      <div class="search-popup-overlay"></div>
+      <div class="search-popup-content">
+        <a href="#" class="close-search">
+          <i class="fa-regular fa-times"></i>
+        </a>
+        <div class="search-popup-form-container">
+          <form>
+            <input type="text" placeholder="Search Here">
+            <button><i class="fa-regular fa-magnifying-glass"></i></button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- Sidebar -->
+    <div class="mobile-menu mobile-menu-2">
+      <div class="menu-backdrop"></div>
+      <div class="main-menu-mobile">
+        <div class="d-flex align-items-center justify-content-between">
+          <div class="nav-logo">
+            <a href="index-2.html"><img src="img/logo-2.png" alt="" title=""></a>
+          </div>
+          <div class="close-btn"><span class="far fa-times fa-fw"></span></div>
+        </div>
+        <div id="mobile-nav"></div>
+      </div>
+    </div>
+    <div class="ScrollSmoother-wrapper" style="inset: 0px; width: 100%; height: 100%; position: fixed; overflow: hidden;"><div id="scrollsmoother-container" style="translate: none; rotate: none; scale: none; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); box-sizing: border-box; width: 100%; overflow: visible;">
+      <!-- breadcrumbs -->
+      <section class="breadcrumbs">
+        <div class="container" style="perspective: 400px;">
+          <div class="tf__breadcrumbs_text" data-animation="move" data-animation-offset="40" data-animation-delay="1.2" style="translate: none; rotate: none; scale: none; transform-origin: 648px 68.5px; opacity: 1; transform: translate3d(0px, 0px, 0px);">
+            <h1 class="text-white">Blog List</h1>
+            <ul>
+              <li><a href="#" class="text-white">Home</a></li>
+              <li><i class="fa-light fa-angle-right text-white"></i></li>
+              <li><a href="#" class="color-theme-1">Blog Classic</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+    <!-- Blog Container -->
+    <div class="blog-container">
+        <div class="container">
+            <div class="row">
+                <!-- Blog Card 1 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="blog-card">
+                        <div class="blog-image">
+                            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" alt="C# Performance Optimization">
+                            <div class="blog-category">Performance</div>
+                        </div>
+                        <div class="blog-content">
+                            <h3 class="blog-title">
+                                <a href="#">Advanced C# Performance Optimization Techniques</a>
+                            </h3>
+                            <div class="blog-meta">
+                                <div class="author">
+                                    <i class="fa fa-user"></i>
+                                    <span>Shreyansh Padmani</span>
+                                </div>
+                                <div class="date">
+                                    <i class="fa fa-calendar"></i>
+                                    <span>June 15, 2025</span>
+                                </div>
+                            </div>
+                            <p class="blog-excerpt">
+                                Discover cutting-edge techniques to optimize C# applications for maximum performance. From memory management to async patterns, learn how to make your code blazingly fast.
+                            </p>
+                            <div class="blog-actions">
+                                <a href="#" class="btn-read">
+                                    <i class="fa fa-book"></i>
+                                    Read Blog
+                                </a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Card 2 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="blog-card">
+                        <div class="blog-image">
+                            <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" alt="Angular Best Practices">
+                            <div class="blog-category">Angular</div>
+                        </div>
+                        <div class="blog-content">
+                            <h3 class="blog-title">
+                                <a href="#">Angular 17: Modern Development Best Practices</a>
+                            </h3>
+                            <div class="blog-meta">
+                                <div class="author">
+                                    <i class="fa fa-user"></i>
+                                    <span>Shreyansh Padmani</span>
+                                </div>
+                                <div class="date">
+                                    <i class="fa fa-calendar"></i>
+                                    <span>June 10, 2025</span>
+                                </div>
+                            </div>
+                            <p class="blog-excerpt">
+                                Explore the latest Angular features and best practices for building scalable, maintainable applications. From standalone components to new control flow syntax.
+                            </p>
+                            <div class="blog-actions">
+                                <a href="#" class="btn-read">
+                                    <i class="fa fa-book"></i>
+                                    Read Blog
+                                </a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Card 3 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="blog-card">
+                        <div class="blog-image">
+                            <img src="https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" alt=".NET Core Architecture">
+                            <div class="blog-category">.NET</div>
+                        </div>
+                        <div class="blog-content">
+                            <h3 class="blog-title">
+                                <a href="#">Building Microservices with .NET 8 and Docker</a>
+                            </h3>
+                            <div class="blog-meta">
+                                <div class="author">
+                                    <i class="fa fa-user"></i>
+                                    <span>Shreyansh Padmani</span>
+                                </div>
+                                <div class="date">
+                                    <i class="fa fa-calendar"></i>
+                                    <span>June 5, 2025</span>
+                                </div>
+                            </div>
+                            <p class="blog-excerpt">
+                                Complete guide to architecting and deploying microservices using .NET 8, Docker containers, and modern DevOps practices for enterprise applications.
+                            </p>
+                            <div class="blog-actions">
+                                <a href="#" class="btn-read">
+                                    <i class="fa fa-book"></i>
+                                    Read Blog
+                                </a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Card 4 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="blog-card">
+                        <div class="blog-image">
+                            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" alt="Database Optimization">
+                            <div class="blog-category">Database</div>
+                        </div>
+                        <div class="blog-content">
+                            <h3 class="blog-title">
+                                <a href="#">Entity Framework Performance Tuning Guide</a>
+                            </h3>
+                            <div class="blog-meta">
+                                <div class="author">
+                                    <i class="fa fa-user"></i>
+                                    <span>Shreyansh Padmani</span>
+                                </div>
+                                <div class="date">
+                                    <i class="fa fa-calendar"></i>
+                                    <span>May 28, 2025</span>
+                                </div>
+                            </div>
+                            <p class="blog-excerpt">
+                                Master Entity Framework performance optimization techniques. Learn about query optimization, caching strategies, and database indexing for faster applications.
+                            </p>
+                            <div class="blog-actions">
+                                <a href="#" class="btn-read">
+                                    <i class="fa fa-book"></i>
+                                    Read Blog
+                                </a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Card 5 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="blog-card">
+                        <div class="blog-image">
+                            <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" alt="Web Security">
+                            <div class="blog-category">Security</div>
+                        </div>
+                        <div class="blog-content">
+                            <h3 class="blog-title">
+                                <a href="#">Implementing JWT Authentication in .NET Core</a>
+                            </h3>
+                            <div class="blog-meta">
+                                <div class="author">
+                                    <i class="fa fa-user"></i>
+                                    <span>Shreyansh Padmani</span>
+                                </div>
+                                <div class="date">
+                                    <i class="fa fa-calendar"></i>
+                                    <span>May 20, 2025</span>
+                                </div>
+                            </div>
+                            <p class="blog-excerpt">
+                                Step-by-step guide to implementing secure JWT authentication and authorization in .NET Core applications with best security practices.
+                            </p>
+                            <div class="blog-actions">
+                                <a href="#" class="btn-read">
+                                    <i class="fa fa-book"></i>
+                                    Read Blog
+                                </a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Card 6 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="blog-card">
+                        <div class="blog-image">
+                            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" alt="DevOps">
+                            <div class="blog-category">DevOps</div>
+                        </div>
+                        <div class="blog-content">
+                            <h3 class="blog-title">
+                                <a href="#">CI/CD Pipeline for .NET Applications with Azure</a>
+                            </h3>
+                            <div class="blog-meta">
+                                <div class="author">
+                                    <i class="fa fa-user"></i>
+                                    <span>Shreyansh Padmani</span>
+                                </div>
+                                <div class="date">
+                                    <i class="fa fa-calendar"></i>
+                                    <span>May 15, 2025</span>
+                                </div>
+                            </div>
+                            <p class="blog-excerpt">
+                                Learn to set up robust CI/CD pipelines for .NET applications using Azure DevOps, automated testing, and deployment strategies for production environments.
+                            </p>
+                            <div class="blog-actions">
+                                <a href="#" class="btn-read">
+                                    <i class="fa fa-book"></i>
+                                    Read Blog
+                                </a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination-wrapper">
+                <nav aria-label="Blog pagination">
+                    <ul class="pagination">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1">
+                                <i class="fa fa-chevron-left"></i>
+                            </a>
+                        </li>
+                        <li class="page-item active">
+                            <a class="page-link" href="#">1</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">2</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">3</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">
+                                <i class="fa fa-chevron-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/lib/jquery.min.js"></script>
+    <script src="./js/lib/bootstrap.bundle.min.js"></script>
+    <script src="./js/lib/waypoints.min.js"></script>
+    <script src="./js/lib/jquery.counterup.min.js"></script>
+    <script src="./js/lib/swiper-bundle.min.js"></script>
+    <script src="./js/lib/imagesloaded.js"></script>
+    <script src="./js/lib/jquery.magnific-popup.min.js"></script>
+    <script src="./js/lib/isotope.js"></script>
+    <!-- Gsap -->
+    <script src="./js/gsap/gsap.min.js"></script>
+    <script src="./js/gsap/SplitText.min.js"></script>
+    <script src="./js/gsap/ScrollSmoother.min.js"></script>
+    <script src="./js/gsap/ScrollTrigger.min.js"></script>
+    <!--  -->
+    <script src="./js/animation.js"></script>
+    <script src="./js/main.js"></script>
+    <script>
+        // Initialize tooltips
+        const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl);
+        });
+    </script>
+</body>
+</html>

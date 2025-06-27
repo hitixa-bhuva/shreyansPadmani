@@ -36800,7 +36800,7 @@ header.sticky {
   background-color: rgba(0, 0, 0, 0);
 }
 .contact-info-bg .social a:hover {
-  background-color: rgb(from var(--white) r g b/10%);
+  background-color: var(--tj-theme-primary);
   color: var(--white);
 }
 .contact-form-2 textarea {
@@ -37681,8 +37681,7 @@ header.sticky {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  height: 40px;
-  width: 40px;
+  padding: 10px;
   background-color: var(--theme);
   border-radius: 50%;
 }
@@ -37879,4 +37878,24 @@ header.sticky {
   color: rgba(0, 0, 0, 0);
   background-clip: text;
   -webkit-background-clip: text;
-} /*# sourceMappingURL=main.css.map */
+} 
+.Shreyanshilightword{
+    color: var(--tj-theme-primary);
+    font-style: italic;
+    font-weight: 400;
+    font-family: 'Asap Condensed', sans-serif;
+    font-size: 80px;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: 0%;
+}
+.highlighted-line {
+    font-weight: 700;
+    color: var(--tj-theme-primary); 
+    font-family: 'Asap Condensed', sans-serif;
+  }
+  .highlighted-sub-line{
+    color: var(--tj-theme-primary); 
+    font-family: 'Asap Condensed', sans-serif;
+    font-weight: 600;
+  }
