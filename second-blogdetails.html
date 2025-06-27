@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimizing .NET Applications for Maximum Performance - Shreyansh Padmani</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome 4.7.0 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Prism.js for code highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary-color: #64748b;
+            --accent-color: #f59e0b;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --bg-light: #f8fafc;
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background-color: #ffffff;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: white;
+            box-shadow: var(--shadow-sm);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary-color) !important;
+            font-size: 1.5rem;
+        }
+
+        .nav-link {
+            color: var(--text-dark) !important;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color) !important;
+        }
+
+        .back-btn {
+            background: var(--bg-light);
+            border: 1px solid var(--border-color);
+            color: var(--text-dark);
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .back-btn:hover {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Hero Section */
+        .blog-hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blog-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .blog-category-hero {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 25px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .blog-title-hero {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .blog-meta-hero {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 2rem;
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .blog-excerpt-hero {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+        }
+
+        /* Main Content */
+        .blog-content-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .blog-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .blog-content h2 {
+            color: var(--text-dark);
+            font-weight: 600;
+            margin: 2.5rem 0 1rem 0;
+            font-size: 1.8rem;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .blog-content h2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 30px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .blog-content h3 {
+            color: var(--text-dark);
+            font-weight: 600;
+            margin: 2rem 0 1rem 0;
+            font-size: 1.4rem;
+        }
+
+        .blog-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--text-dark);
+        }
+
+        .blog-content ul, .blog-content ol {
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+        }
+
+        .blog-content li {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .blog-content blockquote {
+            background: var(--bg-light);
+            border-left: 4px solid var(--primary-color);
+            padding: 1.5rem 2rem;
+            margin: 2rem 0;
+            font-style: italic;
+            font-size: 1.1rem;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .blog-content blockquote p {
+            margin-bottom: 0;
+        }
+
+        /* Code Blocks */
+        .code-block {
+            background: #2d3748;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            position: relative;
+            overflow-x: auto;
+        }
+
+        .code-block pre {
+            margin: 0;
+            color: #e2e8f0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .code-header {
+            background: #1a202c;
+            color: #e2e8f0;
+            padding: 0.8rem 1.5rem;
+            border-radius: 12px 12px 0 0;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 0;
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 16px;
+            margin: 2.5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .highlight-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+
+        .highlight-box h4 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+            position: relative;
+            z-index: 2;
+            opacity: 0.95;
+        }
+
+        /* Image Gallery */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2.5rem 0;
+        }
+
+        .gallery-item {
+            background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+            height: 200px;
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+
+        .gallery-item::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+        }
+
+        .gallery-item::after {
+            content: '\f03e';
+            font-family: FontAwesome;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 24px;
+        }
+
+        /* Author Section */
+        .author-section {
+            background: var(--bg-light);
+            padding: 3rem 2rem;
+            border-radius: 16px;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .author-avatar {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, var(--primary-color), var(--primary-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            color: white;
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+        .author-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .author-title {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .author-bio {
+            color: var(--text-dark);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* Navigation Footer */
+        .blog-navigation {
+            background: white;
+            padding: 3rem 0;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .nav-card {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            height: 100%;
+        }
+
+        .nav-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-color);
+            color: inherit;
+        }
+
+        .nav-label {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            line-height: 1.4;
+        }
+
+        /* Share Buttons */
+        .share-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .share-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .share-btn {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .share-btn:hover {
+            transform: translateY(-3px);
+            color: white;
+        }
+
+        .share-btn.twitter { background: #1da1f2; }
+        .share-btn.linkedin { background: #0077b5; }
+        .share-btn.facebook { background: #1877f2; }
+        .share-btn.email { background: #ea4335; }
+
+        /* Table of Contents */
+        .toc {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            margin: 2rem 0;
+            position: sticky;
+            top: 100px;
+        }
+
+        .toc h4 {
+            color: var(--text-dark);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .toc ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .toc li {
+            margin-bottom: 0.5rem;
+        }
+
+        .toc a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            display: block;
+            padding: 0.25rem 0;
+        }
+
+        .toc a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .blog-title-hero {
+                font-size: 2rem;
+            }
+            
+            .blog-meta-hero {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            
+            .blog-content h2 {
+                font-size: 1.5rem;
+            }
+            
+            .toc {
+                position: static;
+            }
+            
+            .share-buttons {
+                flex-wrap: wrap;
+            }
+        }
+
+        /* Reading Progress Bar */
+        .reading-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: var(--primary-color);
+            z-index: 9999;
+            transition: width 0.1s ease;
+        }
+
+        /* Animations */
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Reading Progress Bar -->
+    <div class="reading-progress" id="readingProgress"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="fa fa-code"></i> Shreyansh Padmani</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+                <a href="#" class="back-btn">
+                    <i class="fa fa-arrow-left"></i> Back to Blog
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="blog-hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="hero-content text-center fade-in-up">
+                        <span class="blog-category-hero">Performance</span>
+                        <h1 class="blog-title-hero">Optimizing .NET Applications for Maximum Performance</h1>
+                        <div class="blog-meta-hero justify-content-center">
+                            <div class="meta-item">
+                                <i class="fa fa-user"></i>
+                                <span>Shreyansh Padmani</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fa fa-calendar"></i>
+                                <span>June 20, 2025</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fa fa-clock-o"></i>
+                                <span>8 min read</span>
+                            </div>
+                        </div>
+                        <p class="blog-excerpt-hero">
+                            Discover advanced techniques to boost your .NET application performance, including memory optimization, async patterns, and profiling strategies that can transform your application's efficiency.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="blog-content-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <!-- Table of Contents -->
+                    <div class="toc">
+                        <h4><i class="fa fa-list"></i> Table of Contents</h4>
+                        <ul>
+                            <li><a href="#introduction">Introduction</a></li>
+                            <li><a href="#memory-optimization">Memory Optimization</a></li>
+                            <li><a href="#async-patterns">Async Programming Patterns</a></li>
+                            <li><a href="#profiling-tools">Profiling Tools & Techniques</a></li>
+                            <li><a href="#database-optimization">Database Optimization</a></li>
+                            <li><a href="#caching-strategies">Caching Strategies</a></li>
+                            <li><a href="#conclusion">Conclusion</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-9">
+                    <div class="blog-content fade-in-up">
+                        <section id="introduction">
+                            <p>Performance optimization in .NET applications is crucial for delivering exceptional user experiences and maintaining system scalability. In this comprehensive guide, we'll explore proven techniques and best practices that can significantly improve your application's performance.</p>
+
+                            <p>As applications grow in complexity and user base, performance bottlenecks become more apparent. Whether you're working with web applications, desktop software, or microservices, understanding how to optimize your .NET code is essential for success.</p>
+
+                            <div class="highlight-box">
+                                <h4><i class="fa fa-lightbulb-o"></i> Key Takeaway</h4>
+                                <p>Performance optimization is not just about writing faster code—it's about understanding your application's behavior, identifying bottlenecks, and making informed decisions based on data-driven insights.</p>
+                            </div>
+                        </section>
+
+                        <section id="memory-optimization">
+                            <h2>Memory Optimization Techniques</h2>
+                            
+                            <p>Memory management is one of the most critical aspects of .NET performance optimization. While the garbage collector handles most memory management automatically, understanding how to work with it effectively can dramatically improve your application's performance.</p>
+
+                            <h3>1. Object Pooling</h3>
+                            <p>Object pooling is a technique where you reuse objects instead of creating new ones. This reduces garbage collection pressure and improves performance, especially for frequently created objects.</p>
+
+                            <div class="code-header">C# - Object Pool Implementation</div>
+                            <div class="code-block">
+                                <pre><code>public class ObjectPool&lt;T&gt; where T : class, new()
+{
+    private readonly ConcurrentQueue&lt;T&gt; _objects = new();
+    private readonly Func&lt;T&gt; _objectGenerator;
+
+    public ObjectPool(Func&lt;T&gt; objectGenerator = null)
+    {
+        _objectGenerator = objectGenerator ?? (() =&gt; new T());
+    }
+
+    public T GetObject()
+    {
+        return _objects.TryDequeue(out T item) ? item : _objectGenerator();
+    }
+
+    public void ReturnObject(T item)
+    {
+        _objects.Enqueue(item);
+    }
+}</code></pre>
+                            </div>
+
+                            <h3>2. Span&lt;T&gt; and Memory&lt;T&gt;</h3>
+                            <p>These types provide a type-safe representation of a contiguous region of arbitrary memory, allowing you to work with arrays and strings more efficiently without additional allocations.</p>
+
+                            <div class="code-header">C# - Using Span for String Operations</div>
+                            <div class="code-block">
+                                <pre><code>// Instead of creating substrings (which allocate new strings)
+string original = "Hello, World!";
+string substring = original.Substring(7, 5); // Allocates new string
+
+// Use Span to work with string data without allocation
+ReadOnlySpan&lt;char&gt; span = original.AsSpan(7, 5);
+// span now references "World" without allocation</code></pre>
+                            </div>
+                        </section>
+
+                        <section id="async-patterns">
+                            <h2>Async Programming Patterns</h2>
+                            
+                            <p>Proper async/await usage is crucial for building scalable .NET applications. However, incorrect implementation can lead to deadlocks, thread starvation, and poor performance.</p>
+
+                            <h3>Best Practices for Async Programming</h3>
+                            
+                            <ul>
+                                <li><strong>Always use ConfigureAwait(false)</strong> in library code to prevent deadlocks</li>
+                                <li><strong>Avoid async void</strong> except for event handlers</li>
+                                <li><strong>Use Task.WhenAll</strong> for concurrent operations</li>
+                                <li><strong>Implement proper cancellation</strong> with CancellationToken</li>
+                            </ul>
+
+                            <div class="code-header">C# - Efficient Async Pattern</div>
+                            <div class="code-block">
+                                <pre><code>public async Task&lt;List&lt;UserData&gt;&gt; GetUsersAsync(IEnumerable&lt;int&gt; userIds, 
+                                                        CancellationToken cancellationToken = default)
+{
+    var tasks = userIds.Select(async id =&gt; 
+    {
+        var response = await _httpClient.GetAsync($"/api/users/{id}", cancellationToken)
+                                       .ConfigureAwait(false);
+        return await response.Content.ReadFromJsonAsync&lt;UserData&gt;(cancellationToken)
+                                    .ConfigureAwait(false);
+    });
+
+    return (await Task.WhenAll(tasks).ConfigureAwait(false)).ToList();
+}</code></pre>
+                            </div>
+                        </section>
+
+                        <section id="profiling-tools">
+                            <h2>Profiling Tools & Techniques</h2>
+                            
+                            <p>Profiling is essential for identifying performance bottlenecks. Without proper profiling, optimization efforts often target the wrong areas, leading to minimal performance gains.</p>
+
+                            <div class="image-gallery">
+                                <div class="gallery-item" style="background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);"></div>
+                                <div class="gallery-item" style="background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);"></div>
+                            </div>
+
+                            <h3>Popular .NET Profiling Tools</h3>
+                            <ul>
+                                <li><strong>Visual Studio Diagnostic Tools</strong> - Built-in profiling for memory and CPU usage</li>
+                                <li><strong>JetBrains dotMemory/dotTrace</strong> - Comprehensive memory and performance profiling</li>
+                                <li><strong>Application Insights</strong> - Production performance monitoring</li>
+                                <li><strong>BenchmarkDotNet</strong> - Micro-benchmarking framework for precise measurements</li>
+                            </ul>
+
+                            <blockquote>
+                                "Premature optimization is the root of all evil. Yet we should not pass up our opportunities in that critical 3%." - Donald Knuth
+                            </blockquote>
+                        </section>
+
+                        <section id="database-optimization">
+                            <h2>Database Optimization</h2>
+                            
+                            <p>Database operations often represent the largest performance bottleneck in applications. Optimizing these operations can provide the most significant performance improvements.</p>
+
+                            <h3>Entity Framework Optimization</h3>
+                            
+                            <div class="code-header">C# - Optimized EF Query</div>
+                            <div class="code-block">
+                                <pre><code>// Avoid N+1 queries with Include
+var orders = await context.Orders
+    .Include(o =&gt; o.Customer)
+    .Include(o =&gt; o.OrderItems)
+        .ThenInclude(oi =&gt; oi.Product)
+    .Where(o =&gt; o.OrderDate &gt;= DateTime.Today.AddDays(-30))
+    .AsNoTracking() // For read-only scenarios
+    .ToListAsync();
+
+// Use projection for better performance
+var orderSummaries = await context.Orders
+    .Where(o =&gt; o.OrderDate &gt;= DateTime.Today.AddDays(-30))
+    .Select(o =&gt; new OrderSummaryDto
+    {
+        Id = o.Id,
+        CustomerName = o.Customer.Name,
+        Total = o.OrderItems.Sum(oi =&gt; oi.Price * oi.Quantity)
+    })
+    .ToListAsync();</code></pre>
+                            </div>
+                        </section>
+
+                        <section id="caching-strategies">
+                            <h2>Caching Strategies</h2>
+                            
+                            <p>Implementing effective caching strategies can dramatically reduce response times and system load. .NET provides several caching options, each suited for different scenarios.</p>
+
+                            <h3>Types of Caching</h3>
+                            <ul>
+                                <li><strong>Memory Caching</strong> - Fast, in-process caching for frequently accessed data</li>
+                                <li><strong>Distributed Caching</strong> - Shared cache across multiple application instances</li>
+                                <li><strong>Response Caching</strong> - HTTP response caching for web applications</li>
+                                <li><strong>Output Caching</strong> - Caching entire page or partial view output</li>
+                            </ul>
+
+                            <div class="highlight-box">
+                                <h4><i class="fa fa-rocket"></i> Performance Impact</h4>
+                                <p>Proper caching implementation can reduce response times by 80-95% for frequently accessed data, significantly improving user experience and reducing server load.</p>
+                            </div>
+                        </section>
+
+                        <section id="conclusion">
+                            <h2>Conclusion</h2>
+                            
+                            <p>Performance optimization in .NET applications requires a systematic approach combining proper measurement, targeted improvements, and continuous monitoring. The techniques covered in this article provide a solid foundation for building high-performance applications.</p>
+
+                            <p>Remember that optimization is an iterative process. Always profile first, optimize based on data, and measure the impact of your changes. Focus on the areas that provide the most significant performance gains for your specific use case.</p>
+
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

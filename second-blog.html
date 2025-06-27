@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Shreyansh Padmani | Senior Software Engineer</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome 4.7.0 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary-color: #64748b;
+            --accent-color: #f59e0b;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --bg-light: #f8fafc;
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #ffffff;
+        }
+
+        /* Header Styles */
+        .blog-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 60px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blog-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .blog-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .blog-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Blog Container */
+        .blog-container {
+            padding: 80px 0;
+            background-color: var(--bg-light);
+        }
+
+        /* Filter Bar */
+        .filter-bar {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 40px;
+            border: 1px solid var(--border-color);
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: 2px solid var(--border-color);
+            color: var(--text-light);
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+            transform: translateY(-1px);
+        }
+
+        /* Blog Cards */
+        .blog-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+            transition: all 0.4s ease;
+            height: 100%;
+            position: relative;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-color);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blog-image::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .blog-image::after {
+            content: '\f1c0';
+            font-family: FontAwesome;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 24px;
+        }
+
+        .blog-card:nth-child(1) .blog-image { background: linear-gradient(45deg, #667eea 0%, #764ba2 100%); }
+        .blog-card:nth-child(2) .blog-image { background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%); }
+        .blog-card:nth-child(3) .blog-image { background: linear-gradient(45deg, #4facfe 0%, #00f2fe 100%); }
+        .blog-card:nth-child(4) .blog-image { background: linear-gradient(45deg, #43e97b 0%, #38f9d7 100%); }
+        .blog-card:nth-child(5) .blog-image { background: linear-gradient(45deg, #fa709a 0%, #fee140 100%); }
+        .blog-card:nth-child(6) .blog-image { background: linear-gradient(45deg, #a8edea 0%, #fed6e3 100%); }
+        .blog-card:nth-child(7) .blog-image { background: linear-gradient(45deg, #ff9a9e 0%, #fecfef 100%); }
+        .blog-card:nth-child(8) .blog-image { background: linear-gradient(45deg, #a18cd1 0%, #fbc2eb 100%); }
+
+        .blog-content {
+            padding: 24px;
+        }
+
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+
+        .blog-category {
+            background: var(--primary-color);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .blog-date {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .blog-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+            line-height: 1.4;
+            transition: color 0.3s ease;
+        }
+
+        .blog-card:hover .blog-title {
+            color: var(--primary-color);
+        }
+
+        .blog-author {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 12px;
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+
+        .blog-excerpt {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .blog-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .read-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 25px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .read-btn:hover {
+            background: var(--primary-dark);
+            color: white;
+            transform: translateX(3px);
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .action-btn {
+            width: 35px;
+            height: 35px;
+            border: 1px solid var(--border-color);
+            background: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .action-btn:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .action-btn.edit:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        .action-btn.delete:hover {
+            border-color: #ef4444;
+            color: #ef4444;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .blog-header h1 {
+                font-size: 2rem;
+            }
+            
+            .blog-header p {
+                font-size: 1rem;
+            }
+            
+            .blog-container {
+                padding: 40px 0;
+            }
+            
+            .filter-btn {
+                font-size: 0.875rem;
+                padding: 6px 16px;
+            }
+        }
+
+        /* Loading Animation */
+        .blog-grid {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Tooltip Styles */
+        [data-bs-toggle="tooltip"] {
+            position: relative;
+        }
+
+        .tooltip {
+            font-size: 0.75rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="blog-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1><i class="fa fa-code"></i> Tech Blog</h1>
+                    <p>Exploring the world of software development, performance optimization, and modern web technologies</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Blog Container -->
+    <section class="blog-container">
+        <div class="container">
+            <!-- Filter Bar -->
+            <div class="filter-bar">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <h5 class="mb-0"><i class="fa fa-filter"></i> Filter by Category</h5>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex flex-wrap justify-content-md-end">
+                            <button class="filter-btn active" data-filter="all">All Posts</button>
+                            <button class="filter-btn" data-filter="performance">Performance</button>
+                            <button class="filter-btn" data-filter="dotnet">.NET</button>
+                            <button class="filter-btn" data-filter="angular">Angular</button>
+                            <button class="filter-btn" data-filter="web-dev">Web Dev</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog Grid -->
+            <div class="row blog-grid" id="blogGrid">
+                <!-- Blog Card 1 -->
+                <div class="col-lg-6 col-xl-4 mb-4" data-category="performance">
+                    <div class="blog-card">
+                        <div class="blog-image"></div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-category">Performance</span>
+                                <span class="blog-date">
+                                    <i class="fa fa-calendar"></i>
+                                    June 20, 2025 • 10:30 AM
+                                </span>
+                            </div>
+                            <h3 class="blog-title">Optimizing .NET Applications for Maximum Performance</h3>
+                            <div class="blog-author">
+                                <i class="fa fa-user"></i>
+                                <span>Shreyansh Padmani</span>
+                            </div>
+                            <p class="blog-excerpt">
+                                Discover advanced techniques to boost your .NET application performance, including memory optimization, async patterns, and profiling strategies.
+                            </p>
+                            <div class="blog-actions">
+                                <a href="#" class="read-btn">
+                                    Read Blog <i class="fa fa-arrow-right"></i>
+                                </a>
+                                <div class="action-buttons">
+                                    <button class="action-btn edit" data-bs-toggle="tooltip" title="Edit Post">
+                                        <i class="fa fa-edit"></i>
+                                    </button>
+                                    <button class="action-btn delete" data-bs-toggle="tooltip" title="Delete Post">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Card 2 -->
+                <div class="col-lg-6 col-xl-4 mb-4" data-category="angular">
+                    <div class="blog-card">
+                        <div class="blog-image"></div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-category">Angular</span>
+                                <span class="blog-date">
+                                    <i class="fa fa-calendar"></i>
+                                    June 18, 2025 • 2:15 PM
+                                </span>
+                            </div>
+                            <h3 class="blog-title">Advanced Angular Patterns: Reactive Forms and State Management</h3>
+                            <div class="blog-author">
+                                <i class="fa fa-user"></i>
+                                <span>Shreyansh Padmani</span>
+                            </div>
+                            <p class="blog-excerpt">
+                                Master complex Angular forms and state management patterns using RxJS, NgRx, and reactive programming principles for scalable applications.
+                            </p>
+                            <div class="blog-actions">
+                                <a href="#" class="read-btn">
+                                    Read Blog <i class="fa fa-arrow-right"></i>
+                                </a>
+                                <div class="action-buttons">
+                                    <button class="action-btn edit" data-bs-toggle="tooltip" title="Edit Post">
+                                        <i class="fa fa-edit"></i>
+                                    </button>
+                                    <button class="action-btn delete" data-bs-toggle="tooltip" title="Delete Post">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Card 3 -->
+                <div class="col-lg-6 col-xl-4 mb-4" data-category="dotnet">
+                    <div class="blog-card">
+                        <div class="blog-image"></div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-category">.NET</span>
+                                <span class="blog-date">
+                                    <i class="fa fa-calendar"></i>
+                                    June 15, 2025 • 9:45 AM
+                                </span>
+                            </div>
+                            <h3 class="blog-title">Building Microservices with .NET 8 and Docker</h3>
+                            <div class="blog-author">
+                                <i class="fa fa-user"></i>
+                                <span>Shreyansh Padmani</span>
+                            </div>
+                            <p class="blog-excerpt">
+                                A comprehensive guide to architecting and deploying microservices using .NET 8, Docker containers, and modern DevOps practices.
+                            </p>
+                            <div class="blog-actions">
+                                <a href="#" class="read-btn">
+                                    Read Blog <i class="fa fa-arrow-right"></i>
+                                </a>
+                                <div class="action-buttons">
+                                    <button class="action-btn edit" data-bs-toggle="tooltip" title="Edit Post">
+                                        <i class="fa fa-edit"></i>
+                                    </button>
+                                    <button class="action-btn delete" data-bs-toggle="tooltip" title="Delete Post">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Card 4 -->
+                <div class="col-lg-6 col-xl-4 mb-4" data-category="web-dev">
+                    <div class="blog-card">
+                        <div class="blog-image"></div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-category">Web Dev</span>
+                                <span class="blog-date">
+                                    <i class="fa fa-calendar"></i>
+                                    June 12, 2025 • 11:20 AM
+                                </span>
+                            </div>
+                            <h3 class="blog-title">Modern Web Security: Protecting Your Applications</h3>
+                            <div class="blog-author">
+                                <i class="fa fa-user"></i>
+                                <span>Shreyansh Padmani</span>
+                            </div>
+                            <p class="blog-excerpt">
+                                Essential security practices for modern web applications, covering OWASP top 10, authentication patterns, and secure coding practices.
+                            </p>
+                            <div class="blog-actions">
+                                <a href="#" class="read-btn">
+                                    Read Blog <i class="fa fa-arrow-right"></i>
+                                </a>
+                                <div class="action-buttons">
+                                    <button class="action-btn edit" data-bs-toggle="tooltip" title="Edit Post">
+                                        <i class="fa fa-edit"></i>
+                                    </button>
+                                    <button class="action-btn delete" data-bs-toggle="tooltip" title="Delete Post">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Card 5 -->
+                <div class="col-lg-6 col-xl-4 mb-4" data-category="performance">
+                    <div class="blog-card">
+                        <div class="blog-image"></div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-category">Performance</span>
+                                <span class="blog-date">
+                                    <i class="fa fa-calendar"></i>
+                                    June 10, 2025 • 3:30 PM
+                                </span>
+                            </div>
+                            <h3 class="blog-title">Database Query Optimization: Tips and Best Practices</h3>
+                            <div class="blog-author">
+                                <i class="fa fa-user"></i>
+                                <span>Shreyansh Padmani</span>
+                            </div>
+                            <p class="blog-excerpt">
+                                Learn how to identify and fix performance bottlenecks in your database queries with practical examples and optimization techniques.
+                            </p>
+                            <div class="blog-actions">
+                                <a href="#" class="read-btn">
+                                    Read Blog <i class="fa fa-arrow-right"></i>
+                                </a>
+                                <div class="action-buttons">
+                                    <button class="action-btn edit" data-bs-toggle="tooltip" title="Edit Post">
+                                        <i class="fa fa-edit"></i>
+                                    </button>
+                                    <button class="action-btn delete" data-bs-toggle="tooltip" title="Delete Post">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Card 6 -->
+                <div class="col-lg-6 col-xl-4 mb-4" data-category="angular">
+                    <div class="blog-card">
+                        <div class="blog-image"></div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-category">Angular</span>
+                                <span class="blog-date">
+                                    <i class="fa fa-calendar"></i>
+                                    June 8, 2025 • 1:00 PM
+                                </span>
+                            </div>
+                            <h3 class="blog-title">Angular Testing Strategies: Unit, Integration & E2E</h3>
+                            <div class="blog-author">
+                                <i class="fa fa-user"></i>
+                                <span>Shreyansh Padmani</span>
+                            </div>
+                            <p class="blog-excerpt">
+                                Comprehensive testing strategies for Angular applications using Jasmine, Karma, and Cypress for reliable and maintainable code.
+                            </p>
+                            <div class="blog-actions">
+                                <a href="#" class="read-btn">
+                                    Read Blog <i class="fa fa-arrow-right"></i>
+                                </a>
+                                <div class="action-buttons">
+                                    <button class="action-btn edit" data-bs-toggle="tooltip" title="Edit Post">
+                                        <i class="fa fa-edit"></i>
+                                    </button>
+                                    <button class="action-btn delete" data-bs-toggle="tooltip" title="Delete Post">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Card 7 -->
+                <div class="col-lg-6 col-xl-4 mb-4" data-category="dotnet">
+                    <div class="blog-card">
+                        <div class="blog-image"></div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-category">.NET</span>
+                                <span class="blog-date">
+                                    <i class="fa fa-calendar"></i>
+                                    June 5, 2025 • 4:45 PM
+                                </span>
+                            </div>
+                            <h3 class="blog-title">Clean Architecture in .NET: Principles and Implementation</h3>
+                            <div class="blog-author">
+                                <i class="fa fa-user"></i>
+                                <span>Shreyansh Padmani</span>
+                            </div>
+                            <p class="blog-excerpt">
+                                Implementing clean architecture patterns in .NET applications for better maintainability, testability, and separation of concerns.
+                            </p>
+                            <div class="blog-actions">
+                                <a href="#" class="read-btn">
+                                    Read Blog <i class="fa fa-arrow-right"></i>
+                                </a>
+                                <div class="action-buttons">
+                                    <button class="action-btn edit" data-bs-toggle="tooltip" title="Edit Post">
+                                        <i class="fa fa-edit"></i>
+                                    </button>
+                                    <button class="action-btn delete" data-bs-toggle="tooltip" title="Delete Post">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Card 8 -->
+                <div class="col-lg-6 col-xl-4 mb-4" data-category="web-dev">
+                    <div class="blog-card">
+                        <div class="blog-image"></div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-category">Web Dev</span>
+                                <span class="blog-date">
+                                    <i class="fa fa-calendar"></i>
+                                    June 3, 2025 • 10:15 AM
+                                </span>
+                            </div>
+                            <h3 class="blog-title">Progressive Web Apps: The Future of Web Development</h3>
+                            <div class="blog-author">
+                                <i class="fa fa-user"></i>
+                                <span>Shreyansh Padmani</span>
+                            </div>
+                            <p class="blog-excerpt">
+                                Building progressive web applications that deliver native app experiences using service workers, web manifests, and modern web APIs.
+                            </p>
+                            <div class="blog-actions">
+                                <a href="#" class="read-btn">
+                                    Read Blog <i class="fa fa-arrow-right"></i>
+                                </a>
+                                <div class="action-buttons">
+                                    <button class="action-btn edit" data-bs-toggle="tooltip" title="Edit Post">
+                                        <i class="fa fa-edit"></i>
+                                    </button>
+                                    <button class="action-btn delete" data-bs-toggle="tooltip" title="Delete Post">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Initialize tooltips
+        const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl);
+        });
+
+        // Filter functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const blogCards = document.querySelectorAll('[data-category]');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                const filterValue = button.getAttribute('data-filter');
+                
+                blogCards.forEach(card => {
+                    const cardCategory = card.getAttribute('data-category');
+                    
+                    if (filterValue === 'all' || cardCategory === filterValue) {
+                        card.style.display = 'block';
+                        // Add animation
+                        card.style.animation = 'fadeInUp 0.6s ease forwards';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Add click handlers for action buttons
+        document.querySelectorAll('.action-btn').forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                const action = button.classList.contains('edit') ? 'edit' : 'delete';
+                const blogTitle = button.closest('.blog-card').querySelector('.blog-title').textContent;
+                
+                if (action === 'edit') {
+                    alert(`Edit functionality for: "${blogTitle}"`);
+                } else {
+                    if (confirm(`Are you sure you want to delete: "${blogTitle}"?`)) {
+                        alert(`Deleted: "${blogTitle}"`);
+                    }
+                }
+            });
+        });
+
+        // Add smooth scroll to top functionality
+        const readButtons = document.querySelectorAll('.read-btn');
+        readButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                const blogTitle = button.closest('.blog-card').querySelector('.blog-title').textContent;
+                alert(`Reading: "${blogTitle}"`);
+            });
+        });
+    </script>
+</body>
+</html>
