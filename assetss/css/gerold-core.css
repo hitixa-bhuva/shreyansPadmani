@@ -5296,10 +5296,11 @@ START: Theme Maquee CSS
 }
 .marquee-item .marquee-box .marquee-title .title {
   font-size: 20px;
-  font-weight: var(--tj-fw-ebold);
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.02em;
   margin-bottom: 0;
+  color: #ffffff;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px) {
   .marquee-item .marquee-box {
@@ -10638,7 +10639,7 @@ START: Theme Maquee CSS
 }
 .marquee-item .marquee-box .marquee-title .title {
   font-size: 20px;
-  font-weight: var(--tj-fw-ebold);
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.02em;
   margin-bottom: 0;
@@ -14644,7 +14645,7 @@ START: Theme Services CSS
   height: 100%;
   top: -15px;
   right: -15px;
-  background-color: var(--tj-black-2);
+  background-color: #d8e9ff;
   border-radius: 10px;
   z-index: -1;
 }

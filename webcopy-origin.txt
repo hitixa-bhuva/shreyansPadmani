@@ -314,7 +314,7 @@ Uri: https://ashik-html.vercel.app/img/fav-2.png
 File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\fav-2.png
 Content Type: image/png
 
-Uri: https://ashik-html.vercel.app/img/fav.png
+Uri: https://ashik-html.vercel.app/./assetss/img/logo/favicon-SHREYANS PADMANI.png
 File Name: C:\Downloaded Web Sites\ashik-html.vercel.app\img\fav.png
 Content Type: image/png
 
