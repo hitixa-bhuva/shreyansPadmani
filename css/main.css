@@ -968,6 +968,9 @@
 .mb-20 {
   margin-bottom: 20px;
 }
+.mb-150 {
+  margin-bottom: 150px;
+}
 .mt-20 {
   margin-top: 20px;
 }
@@ -34045,8 +34048,8 @@
 :root {
   --black: #000;
   --white: #fff;
-  --theme: #2c5ea3;
-  --theme-2: #905efb;
+  --theme: #004aad;
+  --theme-2: #004aad;
   --text: #5e5f63;
   --dark: #222222;
   --dark-2: #3a3b5b;
@@ -34060,6 +34063,48 @@
   --bg: #eadfce;
   ---box-shadow: 0px 0px 60px 0px rgba(0, 0, 0, 0.05);
   --box-shadow-white: 0px 0px 60px 0px rgba(255, 255, 255, 0.05);
+}
+:root {
+    --tj-ff-body: "Sora", sans-serif;
+    --tj-ff-heading: "Sora", sans-serif;
+    --tj-ff-russo: "Russo One", sans-serif;
+    --tj-ff-fontawesome: "Font Awesome 6 Pro";
+    --tj-body: #dddddd;
+    --tj-white: #ffffff;
+    --tj-off-white: #f6f3fc;
+    --tj-black: #000000;
+    --tj-black-2: #050709;
+    --tj-black3: #5c6266;
+    --tj-black4: #585859;
+    --tj-h3-black: #0b0410;
+    --tj-heading-primary: #102039;
+    --tj-heading-secondary: #ea1826;
+    --tj-theme-primary: #004aad;
+    --tj-theme-primary-1: #2400ff;
+    --tj-theme-primary-2: #9b8dff;
+    --tj-theme-primary-3: #4654f9;
+    --tj-theme-h3-primary-1: #814cec;
+    --tj-theme-h4-primary-1: #240F31;
+    --tj-theme-secondary: #2a1454;
+    --tj-theme-accent-1: #0f0715;
+    --tj-theme-accent-2: #140c1c;
+    --tj-grey-1: #747779;
+    --tj-grey-2: #d9d9d9;
+    --tj-grey-3: #dddddd;
+    --tj-grey-4: #22272c;
+    --tj-grey-5: #636363;
+    --tj-grey-6: #1b262e;
+    --tj-bg: #0c1115;
+    --tj-bg-2: #0e1418;
+    --tj-bg-3: #10171c;
+    --tj-bg-4: #151b1f;
+    --tj-bg-5: #0D0612;
+    --tj-h3-bg: #15091d;
+    --tj-border: #1b2227;
+    --tj-border1: #2a343c;
+}
+.text-primary{
+  color: #2c5ea3 !important;
 }
 .color-transparent {
   color: transparent;
@@ -34774,7 +34819,7 @@ h5.preloader-text {
   }
 }
 h5.preloader-text::after {
-  content: "Shreyansh";
+  content: "Shreyans";
   position: absolute;
   left: 0;
   top: 0;
@@ -35320,7 +35365,7 @@ form textarea {
   width: 100%;
   padding: 15px 20px;
   background-color: rgba(0, 0, 0, 0);
-  border: 1px solid rgb(from var(--white) r g b/10%);
+  border: 1px solid rgb(from var(--dark) r g b/10%);
   border-radius: 10px;
   resize: none;
   margin-bottom: 20px;
@@ -35821,7 +35866,7 @@ header.sticky {
   padding: 0px;
 }
 .banner {
-  padding-top: 207px;
+  padding-top: 150px;
   position: relative;
 }
 .banner .banner-shap {
@@ -36280,7 +36325,8 @@ header.sticky {
   -ms-flex-pack: center;
   justify-content: center;
   border-radius: 10px;
-  background-color: var(--theme);
+  /* border: 1px solid var(--theme); */
+  /* background-color: var(--theme); */
   margin: 0 auto;
   color: var(--black);
 }
@@ -36636,6 +36682,10 @@ header.sticky {
   font-size: 34px;
   font-weight: 700;
   line-height: 50px;
+  color: white;
+}
+.counter-item p {
+  color: white;
 }
 .contact-info ul li {
   display: -webkit-box;
@@ -36684,6 +36734,7 @@ header.sticky {
 }
 .social a:hover {
   background-color: var(--theme);
+  color: #ffffff !important;
 }
 .contact-form {
   background-color: var(--white);
@@ -37237,10 +37288,11 @@ header.sticky {
   }
 }
 .sidebar-widget {
-  background-color: var(--dark-3);
+  background-color: #ffffff;
   padding: 40px;
   border-radius: 10px;
   margin-bottom: 30px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 .sidebar-widget:last-child {
   margin-bottom: 0;
@@ -37442,7 +37494,7 @@ header.sticky {
 .tags a:hover,
 .tags a.current {
   background-color: var(--theme);
-  color: var(--black);
+  color: #ffffff;
   border: 1px solid var(--theme);
 }
 .sidebar-ad {
@@ -37512,7 +37564,7 @@ header.sticky {
   justify-content: center;
   background-color: var(--theme);
   border-radius: 50%;
-  color: var(--black);
+  color: var(--white);
 }
 .blog-details-footer {
   border-bottom: 1px solid rgb(from var(--white) r g b/20%);
@@ -37605,6 +37657,7 @@ header.sticky {
   padding: 30px 40px;
   border-right: 5px solid var(--theme);
   margin-top: 28px;
+  border-radius: 30px;
 }
 .dark-bg .footer .footer-email {
   background-color: var(--black);
@@ -37658,6 +37711,7 @@ header.sticky {
 .footer-menus a:hover {
   background-color: var(--theme);
   border: 1px solid var(--theme);
+  color: #ffffff;
 }
 .dark-bg .footer-menus a:hover {
   color: var(--black);
